@@ -1,11 +1,6 @@
 ﻿using DesafioTM.Business;
 using DesafioTM.Model;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DesafioTM.Controllers
 {
@@ -33,7 +28,6 @@ namespace DesafioTM.Controllers
             
             if (evento == null) return NotFound("O evento não existe.");
             return Ok(evento);
-            
         }
 
         [HttpPost()]
@@ -43,7 +37,7 @@ namespace DesafioTM.Controllers
             return Ok(_event.Create(evento));
         }
 
-        [HttpPut("{id}")]
+        [HttpPut()]
         public IActionResult Update([FromBody] Event evento)
         {
             if (evento == null) return BadRequest("Este evento não existe");

@@ -1,15 +1,16 @@
 ﻿using DesafioTM.Model;
+using DesafioTM.Model.DTO;
 using System.Collections.Generic;
 
 namespace DesafioTM.Business
 {
     public interface IEvent
     {
-        Event Create(Event eventt);
-        Event FindById(long id);
-        Event Update(Event eventt);
+        EventDTO Create(Event evento);
+        EventDTO FindById(long id);
+        EventDTO Update(Event evento);
         void Delete(long id);
-        List<Event> FindAll();
+        List<EventDTO> FindAll();
 
     }
 }

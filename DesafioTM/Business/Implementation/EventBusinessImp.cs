@@ -1,84 +1,49 @@
-﻿using DesafioTM.Model;
-using DesafioTM.Model.Context;
-using System;
+﻿using AutoMapper;
+using DesafioTM.Model;
+using DesafioTM.Model.DTO;
+using DesafioTM.Repository;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DesafioTM.Business.Implementation
 {
     public class EventBusinessImp : IEvent
     {
-        private readonly MySQLContext _context;
+        private readonly IEventRepository _repository;
+        private readonly IMapper _mapper;
 
-        public EventBusinessImp(MySQLContext context)
+        public EventBusinessImp(IEventRepository repository, IMapper mapper)
         {
-            _context = context;
+            _repository = repository;
+            _mapper = mapper;
         }
 
-        public Event Create(Event evento)
+        public EventDTO Create(Event evento)
         {
-            try
-            {
-                _context.Add(evento);
-                _context.SaveChanges();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            return evento;
+            var eventt = _repository.Create(evento);
+            return _mapper.Map<EventDTO>(eventt);
         }
 
-        public List<Event> FindAll()
+        public List<EventDTO> FindAll()
         {
-            return _context.Events.ToList();
+            var eventos = _repository.FindAll();
+            return _mapper.Map<List<EventDTO>>(eventos);
         }
 
-        public Event FindById(long id)
+        public EventDTO FindById(long id)
         {
-            return _context.Events.SingleOrDefault(evento => evento.Id.Equals(id));
+            var evento = _repository.FindById(id);
+            return _mapper.Map<EventDTO>(evento);
         }
 
-        public Event Update(Event evento)
+        public EventDTO Update(Event evento)
         {
-            var exist = _context.Events.SingleOrDefault(e => e.Id.Equals(evento.Id));
-
-            if(exist != null)
-            {
-                try
-                {
-                    _context.Entry(exist).CurrentValues.SetValues(evento);
-                    _context.SaveChanges();
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
-
-            return evento;
+            var eventt = _repository.Update(evento);
+            return _mapper.Map<EventDTO>(eventt);
         }
 
         public void Delete(long id)
         {
-            var evento = _context.Events.SingleOrDefault(e => e.Id.Equals(id));
-
-            if(evento != null)
-            {
-                try
-                {
-                    _context.Events.Remove(evento);
-                    _context.SaveChanges();
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
+            _repository.Delete(id);
         }
     }
 }

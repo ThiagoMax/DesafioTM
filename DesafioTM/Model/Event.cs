@@ -6,11 +6,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DesafioTM.Model
 {
     [Table("event")]
-    public class Event
-    {
-        [Column("id")]
-        public long Id { get; set; }
-        
+    public class Event : BaseEntity
+    {        
         [Column("name")]
         public string Name { get; set; }
 

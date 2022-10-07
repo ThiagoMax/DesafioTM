@@ -1,19 +1,15 @@
 using DesafioTM.Business;
 using DesafioTM.Business.Implementation;
 using DesafioTM.Model.Context;
+using DesafioTM.Repository;
+using DesafioTM.Repository.Generic;
+using DesafioTM.Repository.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DesafioTM
 {
@@ -35,7 +31,11 @@ namespace DesafioTM
             var connection = Configuration["MySQLConnection:MySQLConnectionString"];
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
 
+            services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IEvent, EventBusinessImp>();
+            services.AddScoped<IEventRepository, EventRepositoryImp>();
+
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

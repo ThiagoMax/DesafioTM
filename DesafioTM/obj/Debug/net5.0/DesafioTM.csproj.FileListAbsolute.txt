@@ -29,3 +29,9 @@ C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM
 C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM\obj\Debug\net5.0\ref\DesafioTM.dll
 C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM\obj\Debug\net5.0\DesafioTM.pdb
 C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM\obj\Debug\net5.0\DesafioTM.genruntimeconfig.cache
+C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\User\OneDrive\Documentos\Personal\Projects\zdesafio\DesafioTM\DesafioTM\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
