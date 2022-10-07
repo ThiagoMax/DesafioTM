@@ -8,7 +8,7 @@ namespace DesafioTM.Helpers
     {
         public HelperProfile()
         {
-            CreateMap<Event, EventDTO>();
+            CreateMap<Event, EventDTO>().ReverseMap();
         }
     }
 }

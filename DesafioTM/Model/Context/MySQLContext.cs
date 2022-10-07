@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DesafioTM.Model.DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace DesafioTM.Model.Context
 {
@@ -12,6 +13,6 @@ namespace DesafioTM.Model.Context
         public DbSet<Purchase> Purchases { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<User> Users { get; set; }
-        //public DbSet<Ticket_Event> Ticket_Events { get; set; }
+        
     }
 }

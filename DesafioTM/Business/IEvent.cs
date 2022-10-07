@@ -1,14 +1,15 @@
-﻿using DesafioTM.Model;
-using DesafioTM.Model.DTO;
+﻿using DesafioTM.Model.DTO;
 using System.Collections.Generic;
 
 namespace DesafioTM.Business
 {
     public interface IEvent
     {
-        EventDTO Create(Event evento);
+        EventDTO Create(EventDTO evento);
         EventDTO FindById(long id);
-        EventDTO Update(Event evento);
+        List<EventDTO> FindByName(string type);
+        List<EventDTO> FindByType(string type);
+        EventDTO Update(EventDTO evento);
         void Delete(long id);
         List<EventDTO> FindAll();
 

@@ -17,9 +17,9 @@ namespace DesafioTM.Business.Implementation
             _mapper = mapper;
         }
 
-        public EventDTO Create(Event evento)
+        public EventDTO Create(EventDTO evento)
         {
-            var eventt = _repository.Create(evento);
+            var eventt = _repository.Create(_mapper.Map<Event>(evento));
             return _mapper.Map<EventDTO>(eventt);
         }
 
@@ -35,9 +35,21 @@ namespace DesafioTM.Business.Implementation
             return _mapper.Map<EventDTO>(evento);
         }
 
-        public EventDTO Update(Event evento)
+        public List<EventDTO> FindByName(string name)
         {
-            var eventt = _repository.Update(evento);
+            var eventos = _repository.FindByName(name);
+            return _mapper.Map<List<EventDTO>>(eventos);
+        }
+
+        public List<EventDTO> FindByType(string type)
+        {
+            var eventos = _repository.FindByType(type);
+            return _mapper.Map<List<EventDTO>>(eventos);
+        }
+
+        public EventDTO Update(EventDTO evento)
+        {
+            var eventt = _repository.Update(_mapper.Map<Event>(evento));
             return _mapper.Map<EventDTO>(eventt);
         }
 
