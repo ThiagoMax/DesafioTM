@@ -2,6 +2,6 @@
 {
     public class Organizer : User
     {
-        public int Cnpj { get; set; }
+        public long Cnpj { get; set; }
     }
 }

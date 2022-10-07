@@ -13,7 +13,10 @@ namespace DesafioTM.Model
         
         [Column("name")]
         public string Name { get; set; }
-        
+
+        [Column("type")]
+        public string Type { get; set; }
+
         [Column("location")]
         public string Location { get; set; }
 
@@ -26,13 +29,10 @@ namespace DesafioTM.Model
         [Column("date")]
         public DateTime Date { get; set; }
 
-        [Column("ticket_qt")]
-        public int TicketsQt { get; set; }
-
-        [Column("type")]
-        public string Type { get; set; }
-
         [Column("org_name")]
-        public Organizer OrganizerName { get; set; }
+        public string OrganizerName { get; set; }
+
+        [Column("tickets_qt")]
+        public int TicketsQt { get; set; }
     }
 }

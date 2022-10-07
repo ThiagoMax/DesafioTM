@@ -5,10 +5,10 @@ namespace DesafioTM.Model
 {
     public class Ticket : BaseEntity
     {
-        public Purchase Compra_Id { get; set; }
-        public Event Evento_Id { get; set; }
-        public string NomeEvento { get; set; }
-        public DateTime DataEvento { get; set; }
-        public string LocalEvento { get; set; }
+        public Purchase Purchase_Id { get; set; }
+        public Event Event_Id { get; set; }
+        public string EventName { get; set; }
+        public DateTime EventDate { get; set; }
+        public string EventLocation { get; set; }
     }
 }

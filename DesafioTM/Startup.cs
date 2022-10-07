@@ -1,3 +1,5 @@
+using DesafioTM.Business;
+using DesafioTM.Business.Implementation;
 using DesafioTM.Model.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +34,8 @@ namespace DesafioTM
 
             var connection = Configuration["MySQLConnection:MySQLConnectionString"];
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+
+            services.AddScoped<IEvent, EventBusinessImp>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,6 +2,6 @@
 {
     public class Vip : Ticket
     {
-        public bool Especial { get; set; }
+        public bool Special { get; set; }
     }
 }
