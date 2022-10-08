@@ -2,6 +2,7 @@
 using DesafioTM.Model;
 using DesafioTM.Model.DTO;
 using DesafioTM.Repository;
+using System;
 using System.Collections.Generic;
 
 namespace DesafioTM.Business.Implementation
@@ -56,6 +57,13 @@ namespace DesafioTM.Business.Implementation
         public List<EventDTO> FindByOrganizerName(string name)
         {
             var eventos = _repository.FindByOrganizerName(name);
+            return _mapper.Map<List<EventDTO>>(eventos);
+        }
+
+        public List<EventDTO> FindByEventDate(string event_date)
+        {
+            DateTime date = DateTime.Parse(event_date);
+            var eventos = _repository.FindByEventDate(date);
             return _mapper.Map<List<EventDTO>>(eventos);
         }
 

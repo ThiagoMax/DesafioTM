@@ -2,6 +2,7 @@
 using DesafioTM.Model.Context;
 using DesafioTM.Model.DTO;
 using DesafioTM.Repository.Generic;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,8 +33,14 @@ namespace DesafioTM.Repository.Implementation
         
         public List<Event> FindByOrganizerName(string name)
         {
-            var events_location = _context.Events.Where(e => e.OrganizerName.Contains(name)).ToList();
-            return events_location;
+            var events_name = _context.Events.Where(e => e.OrganizerName.Contains(name)).ToList();
+            return events_name;
+        }
+
+        public List<Event> FindByEventDate(DateTime date)
+        {
+            var events_date = _context.Events.Where(e => e.Date.Date.Equals(date)).ToList();
+            return events_date;
         }
     }
 }

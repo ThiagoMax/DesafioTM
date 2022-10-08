@@ -2,6 +2,8 @@
 using DesafioTM.Model;
 using DesafioTM.Model.DTO;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Globalization;
 
 namespace DesafioTM.Controllers
 {
@@ -63,7 +65,16 @@ namespace DesafioTM.Controllers
         {
             var evento = _event.FindByOrganizerName(org_name);
 
-            if (evento == null) return NotFound("Não foi encontrado eventos nessa cidade.");
+            if (evento == null) return NotFound("Não foi encontrado eventos desse organizador.");
+            return Ok(evento);
+        }
+
+        [HttpGet("date/{event_date}")]
+        public IActionResult GetByEventDate(string event_date)
+        {
+            var evento = _event.FindByEventDate(event_date);
+
+            if (evento == null) return NotFound("Não foi encontrado eventos nessa data.");
             return Ok(evento);
         }
 
