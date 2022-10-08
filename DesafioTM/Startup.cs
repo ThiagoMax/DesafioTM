@@ -1,9 +1,11 @@
 using DesafioTM.Business;
 using DesafioTM.Business.Implementation;
+using DesafioTM.Business.User;
 using DesafioTM.Model.Context;
 using DesafioTM.Repository;
 using DesafioTM.Repository.Generic;
 using DesafioTM.Repository.Implementation;
+using DesafioTM.Repository.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -32,8 +34,12 @@ namespace DesafioTM
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
 
             services.AddAutoMapper(typeof(Startup));
+            
             services.AddScoped<IEvent, EventBusinessImp>();
             services.AddScoped<IEventRepository, EventRepositoryImp>();
+            
+            services.AddScoped<IUsers, UsersBusinessImp>();
+            services.AddScoped<IUsersRepository, UsersRepositoryImp>();
 
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }

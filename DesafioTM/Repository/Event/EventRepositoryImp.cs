@@ -1,8 +1,6 @@
 ﻿using DesafioTM.Model;
 using DesafioTM.Model.Context;
-using DesafioTM.Model.DTO;
 using DesafioTM.Repository.Generic;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;

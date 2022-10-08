@@ -1,5 +1,4 @@
 ﻿using DesafioTM.Model.Base;
-using DesafioTM.Model.Perfil;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 

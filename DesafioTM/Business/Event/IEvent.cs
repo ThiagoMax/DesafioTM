@@ -16,6 +16,5 @@ namespace DesafioTM.Business
         EventDTO Update(EventDTO evento);
         void Delete(long id);
         List<EventDTO> FindAll();
-
     }
 }
