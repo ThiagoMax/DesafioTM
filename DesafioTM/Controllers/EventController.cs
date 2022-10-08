@@ -27,7 +27,7 @@ namespace DesafioTM.Controllers
         {
             var evento = _event.FindById(id);
             
-            if (evento == null) return NotFound("O evento não existe.");
+            if (evento == null) return NotFound("Não foi encontrado um evento com esse código.");
             return Ok(evento);
         }
 
@@ -36,7 +36,7 @@ namespace DesafioTM.Controllers
         {
             var evento = _event.FindByName(name);
 
-            if (evento == null) return NotFound("Não existe um evento com esse nome.");
+            if (evento == null) return NotFound("Não foi encontrado eventos com esse nome.");
             return Ok(evento);
         }
 
@@ -45,7 +45,25 @@ namespace DesafioTM.Controllers
         {
             var evento = _event.FindByType(type);
 
-            if (evento == null) return NotFound("Essa categoria de evento não existe.");
+            if (evento == null) return NotFound("Não foi encontrado eventos dessa categoria.");
+            return Ok(evento);
+        }
+
+        [HttpGet("location/{location}")]
+        public IActionResult GetByLocation(string location)
+        {
+            var evento = _event.FindByLocation(location);
+
+            if (evento == null) return NotFound("Não foi encontrado eventos nessa cidade.");
+            return Ok(evento);
+        }
+
+        [HttpGet("org_name/{org_name}")]
+        public IActionResult GetByOrganizerName(string org_name)
+        {
+            var evento = _event.FindByOrganizerName(org_name);
+
+            if (evento == null) return NotFound("Não foi encontrado eventos nessa cidade.");
             return Ok(evento);
         }
 

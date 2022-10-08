@@ -8,5 +8,7 @@ namespace DesafioTM.Repository
     {
         List<Event> FindByType(string type);
         List<Event> FindByName(string name);
+        List<Event> FindByLocation(string location);
+        List<Event> FindByOrganizerName(string name);
     }
 }

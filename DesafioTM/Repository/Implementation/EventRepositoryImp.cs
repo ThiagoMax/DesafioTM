@@ -23,5 +23,17 @@ namespace DesafioTM.Repository.Implementation
             var events_name = _context.Events.Where(e => e.Name.Contains(name)).ToList();
             return events_name;
         }
+
+        public List<Event> FindByLocation(string location)
+        {
+            var events_location = _context.Events.Where(e => e.Location.Contains(location)).ToList();
+            return events_location;
+        }
+        
+        public List<Event> FindByOrganizerName(string name)
+        {
+            var events_location = _context.Events.Where(e => e.OrganizerName.Contains(name)).ToList();
+            return events_location;
+        }
     }
 }

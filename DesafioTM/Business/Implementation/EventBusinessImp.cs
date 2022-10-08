@@ -47,6 +47,18 @@ namespace DesafioTM.Business.Implementation
             return _mapper.Map<List<EventDTO>>(eventos);
         }
 
+        public List<EventDTO> FindByLocation(string location)
+        {
+            var eventos = _repository.FindByLocation(location);
+            return _mapper.Map<List<EventDTO>>(eventos);
+        }
+
+        public List<EventDTO> FindByOrganizerName(string name)
+        {
+            var eventos = _repository.FindByOrganizerName(name);
+            return _mapper.Map<List<EventDTO>>(eventos);
+        }
+
         public EventDTO Update(EventDTO evento)
         {
             var eventt = _repository.Update(_mapper.Map<Event>(evento));
