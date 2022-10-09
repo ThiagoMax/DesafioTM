@@ -2,10 +2,7 @@
 using DesafioTM.Model;
 using DesafioTM.Model.DTO;
 using DesafioTM.Repository.User;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DesafioTM.Business.User
 {
@@ -26,10 +23,10 @@ namespace DesafioTM.Business.User
             return _mapper.Map<UsersDTO>(userr);
         }
 
-        public UsersDTO FindById(long id)
+        public GetIdUsersDTO FindById(long id)
         {
             var userr = _repository.FindById(id);
-            return _mapper.Map<UsersDTO>(userr);
+            return _mapper.Map<GetIdUsersDTO>(userr);
         }
 
         public List<UsersDTO> FindByName(string name)

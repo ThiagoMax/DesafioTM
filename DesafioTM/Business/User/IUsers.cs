@@ -6,7 +6,7 @@ namespace DesafioTM.Business
     public interface IUsers
     {
         UsersDTO Create(UsersDTO user);
-        UsersDTO FindById(long id);
+        GetIdUsersDTO FindById(long id);
         List<UsersDTO> FindByName(string name);
         List<UsersDTO> FindByType(string type);
         UsersDTO Update(UsersDTO user);

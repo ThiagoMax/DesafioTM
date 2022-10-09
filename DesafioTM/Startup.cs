@@ -1,10 +1,12 @@
 using DesafioTM.Business;
 using DesafioTM.Business.Implementation;
+using DesafioTM.Business.Purchases;
 using DesafioTM.Business.User;
 using DesafioTM.Model.Context;
 using DesafioTM.Repository;
 using DesafioTM.Repository.Generic;
 using DesafioTM.Repository.Implementation;
+using DesafioTM.Repository.Purchases;
 using DesafioTM.Repository.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -40,6 +42,9 @@ namespace DesafioTM
             
             services.AddScoped<IUsers, UsersBusinessImp>();
             services.AddScoped<IUsersRepository, UsersRepositoryImp>();
+
+            services.AddScoped<IPurchase, PurchaseBusinessImp>();
+            services.AddScoped<IPurchaseRepository, PurchaseRepositoryImp>();
 
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
